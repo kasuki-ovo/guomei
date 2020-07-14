@@ -66,14 +66,29 @@ a {
 		font-size: 30px;
 	}
 }
+@media (max-width:867px) {
+	html{
+		font-size: 24px;
+	}
+}
 @media (max-width:769px) {
 	html{
 		font-size: 22px;
 	}
 }
-@media (max-width:867px) {
+@media (max-width:667px) {
 	html{
-		font-size: 24px;
+		font-size: 20px;
+	}
+}
+@media (max-width:567px) {
+	html{
+		font-size: 18px;
+	}
+}
+@media (max-width:467px) {
+	html{
+		font-size: 12px;
 	}
 }
 @media (max-width:376px) {
@@ -81,5 +96,17 @@ a {
 		font-size: 10px;
 	}
 }
-
+@media (max-width:360px) {
+	.search-right{
+		padding-left: 5%;
+	}
+}
+@media (max-width:350px) {
+	.search-right{
+		padding-left: 3% !important;
+	}
+  .search-icon{
+    margin: 0 0.5rem !important;
+  }
+}
 </style>

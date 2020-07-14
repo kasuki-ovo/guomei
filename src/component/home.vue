@@ -61,7 +61,7 @@
 							<div class="search-icon">
 								<img src="../../img/search_icon.png" alt="">
 							</div>
-							<input type="text" value="冰箱洗衣机美豆双倍返">
+							<input type="text" placeholder="冰箱洗衣机美豆双倍返">
 						</div>
 					</div>
 					<div class="search-right">
@@ -170,7 +170,7 @@
 										<h4><img :src="list.img" alt=""></h4>
 										<span class="price">{{list.price}}</span>
 										<p class="surplus">{{list.surplus}}</p>
-		
+
 									</li>
 								</ul>
 							</div>
@@ -335,7 +335,7 @@
 												<span class="desc">{{list.describe2}}</span>
 											</div>
 											<p class="price">{{list.price}}</p>
-		
+
 										</li>
 									</ul>
 								</div>
@@ -371,7 +371,7 @@
 												<span class="desc">{{list.describe2}}</span>
 											</div>
 											<p class="price">{{list.price}}</p>
-		
+
 										</li>
 									</ul>
 								</div>
@@ -407,7 +407,7 @@
 												<span class="desc">{{list.describe2}}</span>
 											</div>
 											<p class="price">{{list.price}}</p>
-		
+
 										</li>
 									</ul>
 								</div>
@@ -443,7 +443,7 @@
 												<span class="desc">{{list.describe2}}</span>
 											</div>
 											<p class="price">{{list.price}}</p>
-		
+
 										</li>
 									</ul>
 								</div>
@@ -479,7 +479,7 @@
 												<span class="desc">{{list.describe2}}</span>
 											</div>
 											<p class="price">{{list.price}}</p>
-		
+
 										</li>
 									</ul>
 								</div>
@@ -692,8 +692,11 @@
 			}
 		},
 		mounted() {
-			var _this = this
-			this.$http.get('./src/data/home.json')
+			var _this = this;
+      if(window.sessionStorage.hideLink){
+        _this.show = false;
+      }
+			_this.$http.get('./src/data/home.json')
 				.then(function(res) {
 					console.log(res)
 					_this.select = res.data.select;
@@ -733,7 +736,8 @@
 		},
 		methods: {
 			hide() {
-				this.show = !this.show
+				this.show = !this.show;
+        window.sessionStorage.hideLink = true;
 			}
 		},
 		computed: {
@@ -852,6 +856,7 @@
 		width: 100%;
 	}
 	.m-header {
+    display: flex;
 		height: 4.4rem;
 		width: 100%;
 		padding: 0 1rem;
@@ -902,6 +907,7 @@
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 		overflow: hidden;
+    display: flex;
 	}
 	.search-right a {
 		float: left;
